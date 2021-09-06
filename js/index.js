@@ -15,6 +15,7 @@ window.addEventListener('DOMContentLoaded',function(){
     let path, num;
     const elBody = document.querySelector('body');
     const menuBoxUl = document.querySelector('.menubox ul');
+    const menuLi = document.querySelectorAll('.menubox li');
 
     tglBtn.addEventListener('mouseover', ()=>{
         if(num == 2){
@@ -43,7 +44,11 @@ window.addEventListener('DOMContentLoaded',function(){
             menuBoxUl.style = 'display: bolck';
             tglOpen.style = "opacity: 0; z-index: -1";
             tglClose.style = "opacity: 1; z-index: 1";            
-        }, 300);      
+        }, 300);   
+        for(let i=0; i<menuLi.length; i++){
+            menuLi[i].classList.add('active');
+        }
+
     });
     tglClose.addEventListener('click', ()=>{     
         menuBox.style = 'animation: small 0.3s forwards linear'              
@@ -58,7 +63,7 @@ window.addEventListener('DOMContentLoaded',function(){
         tglClose.style = "opacity: 0; z-index: -1";
     });
     
-    function svgMorphing(path){
+    function svgMorphing(path){  //svg이미지 변형
         let timeline = anime({
             duration:100,
             targets : '#tgl_path',
@@ -67,6 +72,12 @@ window.addEventListener('DOMContentLoaded',function(){
             }],
             easing: 'easeInQuad',
         });
+    }
+
+    function listActive(){
+        for(let i=0; i<menuList.length; i++){
+
+        }
     }
 
 

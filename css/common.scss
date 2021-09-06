@@ -59,7 +59,7 @@ header{
     opacity: 0;
     ul{
         li{
-            @include absolute(top,20vh,left,25%);
+            @include absolute(top,40%,left,25%);
             opacity: 0;
             a{
                 font-size: 0.6rem;
@@ -67,9 +67,9 @@ header{
         }
         @for $i from 1 to 7 {
             li:nth-of-type(#{$i}).active{
-                top: calc(20vh + (#{$i} - 1)*1.5vh );
+                top: calc(40% + (#{$i} - 1)*1.5vh );
                 animation: menuList 0.5s forwards linear;
-                animation-delay: calc(#{$i}*0.5s);
+                animation-delay: calc(#{$i}*0.2s);
             }
 
         }  //for end
