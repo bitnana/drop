@@ -20,13 +20,19 @@ header{
             .tgl_btn{
                 position: absolute; right: 15.5%; top: 5%;
                 width: 3%;
+                background-color: aqua;
             }
             .tgl_btn .tgl_open{
-                            }
+                @include absolute(left,0,top,0);
+                z-index: 1;
+            }
             .tgl_btn .tgl_open img{width: 100%;}
             .tgl_btn .tgl_close{
+                z-index: -1;
+                width: 30px;
+                opacity: 0;
                 transition: 0.5s;
-                // transform: translate(-110%, 600%)
+                @include absolute(left,0,top,0);
             }
             .tgl_btn .tgl_close span{
                 display: inline-block;
@@ -35,30 +41,39 @@ header{
                 background: #b3d8e8;
             }
             .tgl_btn .tgl_close span:nth-child(1){
-                transform: rotate(45deg)
+                transform: translateY(100%) rotate(45deg)
             }
             .tgl_btn .tgl_close span:nth-child(2){
-                transform: rotate(-45deg)
+                transform: translateY(-1000%) rotate(-45deg)
             }
         }
 
     }
 }
 .menubox{
-    position: absolute;
-    top: 13%; right: 4%;
+    @include absolute(top,13%,right,4%);
     width: 383px;
     height: 361px; 
     border-radius: 200px;
-    background: #fff;
+    background: white;
     opacity: 0;
     ul{
-        // display: none;
+        li{
+            @include absolute(top,20vh,left,25%);
+            opacity: 0;
+            a{
+                font-size: 0.6rem;
+            }
+        }
+        @for $i from 1 to 7 {
+            li:nth-of-type(#{$i}).active{
+                top: calc(20vh + (#{$i} - 1)*1.5vh );
+                animation: menuList 0.5s forwards linear;
+                animation-delay: calc(#{$i}*0.5s);
+            }
+
+        }  //for end
+        
+
     }
-}
-// .menubox.active{
-//     animation: big 0.5s 0.1s forwards linear;
-// }
-.menubox.close{
-    animation: big 0.5s reverse linear;
 }
