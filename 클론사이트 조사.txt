@@ -13,20 +13,30 @@ https://flashvhtml.com/
 3. 텍스트 대신에 이미지넣을때 텍스트는?? (웹접근성: 발표할때)
 
 --------------------------------------------------------------------------------------------------------------------
+ .menubox{
+    position: absolute; top: 13%; right: 4%;
+    width: 383px;
+    height: 361px; 
+    border-radius: 200px;
+    background: white;
+    opacity: 1;
     ul{
         li{
             @include absolute(top,20vh,left,25%);
+            opacity: 0;
             a{
                 font-size: 0.6rem;
             }
         }
         @for $i from 1 to 7 {
-            li:nth-of-type(#{$i}){
+            li:nth-of-type(#{$i}).active{
                 top: calc(20vh + (#{$i} - 1)*1.5vh );
-                //animation 효과 주기
+                animation: menuList 0.5s forwards linear;
+                animation-delay: calc(#{$i}*0.5s);
             }
 
         }  //for end
         
 
     }
+}
