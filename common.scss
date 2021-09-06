@@ -1,0 +1,79 @@
+@charset "utf-8";
+@import '_mixin.scss';
+
+body {background: #b3d8e8;}
+header{
+    .header_warp{
+        position: relative;
+        z-index:3;
+        h1{}
+        .menu{
+            // position: relative;
+            .tgl_bg{
+                position: fixed; right: 0;top: 0;
+                width: 100%;
+            } 
+            .tgl_bg svg{
+                @include absolute(right,0,top,0);
+                transition: .75s;
+            }
+            .tgl_btn{
+                position: absolute; right: 15.5%; top: 5%;
+                width: 3%;
+                background-color: aqua;
+            }
+            .tgl_btn .tgl_open{
+                @include absolute(left,0,top,0);
+                z-index: 1;
+            }
+            .tgl_btn .tgl_open img{width: 100%;}
+            .tgl_btn .tgl_close{
+                z-index: -1;
+                width: 30px;
+                opacity: 0;
+                transition: 0.5s;
+                @include absolute(left,0,top,0);
+            }
+            .tgl_btn .tgl_close span{
+                display: inline-block;
+                width: 100%;
+                height: 2px;
+                background: #b3d8e8;
+            }
+            .tgl_btn .tgl_close span:nth-child(1){
+                transform: translateY(100%) rotate(45deg)
+            }
+            .tgl_btn .tgl_close span:nth-child(2){
+                transform: translateY(-1000%) rotate(-45deg)
+            }
+        }
+
+    }
+}
+.menubox{
+    @include absolute(top,13%,right,4%);
+    width: 383px;
+    height: 361px; 
+    border-radius: 200px;
+    background: white;
+    opacity: 0;
+    ul{
+        li{
+            @include absolute(top,20vh,left,25%);
+            opacity: 0;
+            a{
+                font-size: 0.6rem;
+            }
+        }
+        @for $i from 1 to 7 {
+            li:nth-of-type(#{$i}).active{
+                top: calc(20vh + (#{$i} - 1)*1.5vh );
+                animation: menuList 0.5s forwards linear;
+                animation-delay: calc(#{$i}*0.5s);
+            }
+
+        }  //for end
+        
+
+    }
+}
