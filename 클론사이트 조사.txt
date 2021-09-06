@@ -13,6 +13,22 @@ https://flashvhtml.com/
 3. 텍스트 대신에 이미지넣을때 텍스트는?? (웹접근성: 발표할때)
 
 --------------------------------------------------------------------------------------------------------------------
+
+<mixin>
+
+@keyframes menuList {
+    0%{
+        transform: translate(0, 20px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+<common>
  .menubox{
     position: absolute; top: 13%; right: 4%;
     width: 383px;
