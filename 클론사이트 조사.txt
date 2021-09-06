@@ -1,0 +1,32 @@
+<참고사이트>
+https://calexo.co/
+http://everylastdrop.co.uk/
+https://sapiens.ui8.net/7m6c4r1
+https://flashvhtml.com/
+
+
+
+
+***css 세팅하기
+1.  scroll down 나타내기 (효과를 어떻게줄것인가)
+2. 우측이나 상단에 스크롤 섹션별 나타내기(bed, bath, clothes,meal, road, space, the end)
+3. 텍스트 대신에 이미지넣을때 텍스트는?? (웹접근성: 발표할때)
+
+--------------------------------------------------------------------------------------------------------------------
+    ul{
+        li{
+            @include absolute(top,20vh,left,25%);
+            a{
+                font-size: 0.6rem;
+            }
+        }
+        @for $i from 1 to 7 {
+            li:nth-of-type(#{$i}){
+                top: calc(20vh + (#{$i} - 1)*1.5vh );
+                //animation 효과 주기
+            }
+
+        }  //for end
+        
+
+    }
