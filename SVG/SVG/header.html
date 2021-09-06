@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+    body,html{padding:0; margin:0;}
+    #svg_path {
+    transition: all .75s;
+    }
+</style>
+</head>
+<body>
+    <svg id="svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+        <defs>
+        <style>.cls-1{fill:#8DD5E5;}</style>
+        </defs>
+        <path id="svg_path" d="M1481.43,0s27.8,2.89,48.36,20.31c8.33,7.06,13.35,18,19,28.64,8.25,15.56,17.78,30.32,41,30.76,22.81.44,32.48-11.76,39.29-24.77,4.82-9.22,8.22-18.85,13.83-24.68C1654.46,18.19,1667.47,6.58,1701,0Z"/>
+    </svg>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script> 
+<script>
+    // Update svg shape
+    const paths = [
+    'M1481.43,0s27.8,2.89,48.36,20.31c8.33,7.06,13.35,18,19,28.64,8.25,15.56,17.78,30.32,41,30.76,22.81.44,32.48-11.76,39.29-24.77,4.82-9.22,8.22-18.85,13.83-24.68C1654.46,18.19,1667.47,6.58,1701,0Z',
+    'M1481.43,0s29.1,1.46,48.36,20.31c12.2,11.94,14.35,43.68,19,54.76,7.47,17.91,17.78,30.32,41,30.76,22.81.44,36.45-11,40.42-28.16,2.43-10.48,2.06-32.36,12.7-47.41C1652.52,16.58,1667.47,6.58,1701,0Z',
+    ];
+    // const colors = ['#9400D3', '#8DD5E5'];
+    let svg = document.getElementById('svg');
+    let svg_path = document.getElementById('svg_path');
+    let destination_path;
+    svg.addEventListener('mouseover', () => {
+      destination_path = paths[1];
+    //   svg_path.attributes['fill'].value = colors[1];
+      svgMorphing(destination_path);
+    });
+    svg.addEventListener('mouseleave', () =>{
+      destination_path = paths[0];
+    //   svg_path.attributes['fill'].value = colors[1];
+      svgMorphing(destination_path);
+    });
+    function svgMorphing(path) {
+      let timeline = anime({
+        duration: 100,
+        targets: '#svg_path',
+        d: [{
+          value: path
+        }],
+        easing: 'easeInQuad',
+      });
+    }
+  </script>
+</body>
+</html>

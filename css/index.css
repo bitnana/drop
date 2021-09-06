@@ -1,0 +1,194 @@
+h1, h2, h3, h4, h5, h6, ul, li, div, html, header, body, main, p, section, figure, figcaption, footer, article, iframe, input, textarea, button, nav, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+*, a, ::after, ::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@-webkit-keyframes goup {
+  0% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes goup {
+  0% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes big {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(8.5);
+            transform: scale(8.5);
+    opacity: 1;
+  }
+}
+
+@keyframes big {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(8.5);
+            transform: scale(8.5);
+    opacity: 1;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, ul, li, div, html, header, body, main, p, section, figure, figcaption, footer, article, iframe, input, textarea, button, nav, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+*, a, ::after, ::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@keyframes goup {
+  0% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes big {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(8.5);
+            transform: scale(8.5);
+    opacity: 1;
+  }
+}
+
+body {
+  background: #b3d8e8;
+}
+
+header .header_warp {
+  position: relative;
+  z-index: 3;
+}
+
+header .header_warp .menu .tgl_bg {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+header .header_warp .menu .tgl_bg svg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: .75s;
+  transition: .75s;
+}
+
+header .header_warp .menu .tgl_btn {
+  position: absolute;
+  right: 15.5%;
+  top: 5%;
+  width: 3%;
+}
+
+header .header_warp .menu .tgl_btn .tgl_open img {
+  width: 100%;
+}
+
+header .header_warp .menu .tgl_btn .tgl_close {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+header .header_warp .menu .tgl_btn .tgl_close span {
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background: #b3d8e8;
+}
+
+header .header_warp .menu .tgl_btn .tgl_close span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+header .header_warp .menu .tgl_btn .tgl_close span:nth-child(2) {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.menubox {
+  position: absolute;
+  top: 13%;
+  right: 4%;
+  width: 383px;
+  height: 361px;
+  border-radius: 200px;
+  background: #fff;
+  opacity: 0;
+}
+
+.menubox.close {
+  animation: big 0.5s reverse linear;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,40 @@
+h1, h2, h3, h4, h5, h6, ul, li, div, html, header, body, main,p, section, figure, figcaption, footer, article, iframe, input, textarea, button, nav, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+li {list-style: none;}
+a {text-decoration: none; color: black;}
+*,a,::after,::before {box-sizing: border-box;}
+
+
+
+@mixin absolute($a,$b,$c,$d){
+    position:absolute;
+    #{$a}: $b;
+    #{$c}: $d;
+}
+@keyframes goup {
+    0%{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes big {
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(8.5);
+        opacity: 1;
+    }
+}
+
+
