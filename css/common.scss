@@ -1,6 +1,10 @@
 @charset "utf-8";
 @import '_mixin.scss';
 
+html, body{
+    background-color: none;
+    margin:0; padding:0;
+}
 body {background: #b3d8e8;}
 header{
     .header_warp{
