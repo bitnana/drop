@@ -16,6 +16,7 @@ window.addEventListener('DOMContentLoaded',function(){
     const elBody = document.querySelector('body');
     const menuBoxUl = document.querySelector('.menubox ul');
     const menuLi = document.querySelectorAll('.menubox li');
+    
 
     tglBtn.addEventListener('mouseover', ()=>{
         if(num == 2){
@@ -74,12 +75,52 @@ window.addEventListener('DOMContentLoaded',function(){
         });
     }
 
-    function listActive(){
-        for(let i=0; i<menuList.length; i++){
-
+    gsap.registerPlugin(ScrollTrigger);
+    
+    var sky = gsap.timeline({
+        scrollTrigger: {
+            trigger: "main",
+            scrub: true,
+            pin: true,
+            start: "top top",
+            end: "+=600",
+            toggleClass: "active",
+            ease: "power3",   //https://greensock.com/docs/v2/Easing
+            markers:true
         }
-    }
+      });
 
+    sky.to(".night", {
+        rotation: 0,xPercent:10 ,yPercent: -100, duration:1
+    });
+
+
+    sky.to(".sun", {
+        rotation: 0,xPercent:-30 ,yPercent: -140, duration:1
+        });
+        
+
+
+    // gsap.to(".c",{
+    //     scrollTrigger:{
+    //         trigger:".c",
+    //         start:"top top",
+    //         end:"bottom bottom",
+    //         markers:true,
+    //         toggleActions: "restart pause reverse pause",
+    //     },
+    //     x:400,
+    //     rotation:360,
+    //     duration:360
+    // });
+
+
+    // toggleActions : play none none none
+    // pause resume reverse restart reset complete none
+                    
+
+    //   https://codepen.io/isladjan/pen/abdyPBw
+    // https://webty.tistory.com/117
 
 
 

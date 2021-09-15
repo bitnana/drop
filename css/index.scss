@@ -6,6 +6,9 @@ main{
     position:relative;
     height: 74000px;
 }
+main.active{
+    position: fixed;
+}
 .sweet-room{
     overflow: hidden;
     height: 100vh;
@@ -14,13 +17,18 @@ main{
     .sky{
         width:100%;
         height: 20vh;
+        overflow: hidden;
         position: relative;
         // @include absolute(top,0,bottom,0);
         // position: fixed;
         z-index: 3;
         background-color: #333;
         text-align: center;
-
+        .sky_warp{
+            width: 1280px;
+            margin: 0 auto;
+            // background-color: #548e8e
+        }
         .moon{
             @include absolute(top,0,bottom,0);
         }
@@ -31,46 +39,49 @@ main{
     }
     .room{
         // overflow: hidden;
-        position: relative;
+        // position: relative;
         // position:sticky;
         // margin-top: 200px;
         // top:200px;
         z-index: 4;
         height: 80vh;
         background-color: #ce918e;
+        ul{
+            position: relative;
+            @include ulAlign;
+            // background-color: #548e8e        
+            li{width:100%;}
+            .desk{
+                @include absolute(top,0,bottom,0);
+                transform: translate(20%, 15%);
+            }
+            .tree{
+                @include absolute(bottom,0,right,0);
+                transform: translate(72%, 15%);
+            }
+            .rug{
+                @include absolute(bottom,0,left,0);
+                transform: translate(20%, 15%);
+            }
+            .side-table{
+                @include absolute(top,0,bottom,0);
+                transform: translate(70%, 15%);
+            }
+            .bed{
+                @include absolute(top,0,bottom,0);
+                transform: translate(45%, 10%);
+            }
+            .sleep{
+                @include absolute(top,0,bottom,0);
+                transform: translate(45% , 10%);
+            }
+            .bed-sheet{
+                @include absolute(top,0,bottom,0);
+                transform: translate(45%, 10%);
+            }
+        }
         img{
             width:auto;
-        }
-    }
-    ul{
-        li{width:100%;}
-        .desk{
-            @include absolute(top,0,bottom,0);
-            transform: translate(20%, 15%);
-        }
-        .tree{
-            @include absolute(bottom,0,right,0);
-            transform: translate(72%, 15%);
-        }
-        .rug{
-            @include absolute(bottom,0,left,0);
-            transform: translate(20%, 15%);
-        }
-        .side-table{
-            @include absolute(top,0,bottom,0);
-            transform: translate(70%, 15%);
-        }
-        .bed{
-            @include absolute(top,0,bottom,0);
-            transform: translate(45%, 10%);
-        }
-        .sleep{
-            @include absolute(top,0,bottom,0);
-            transform: translate(45% , 10%);
-        }
-        .bed-sheet{
-            @include absolute(top,0,bottom,0);
-            transform: translate(45%, 10%);
         }
     }
 }
@@ -92,6 +103,7 @@ main{
         img{width:auto;}
     }
     ul{
+        @include ulAlign;
         li{width:100%; height: 100%;}
         .mirror{
             @include absolute(top,0,left,0);
@@ -149,7 +161,7 @@ main{
     height: 100vh;
     position: relative;
     overflow: hidden;
-    position:sticky;
+    // position:sticky;
     top:0;
     .purple{
         background-color: #6b4b5a;
@@ -161,6 +173,7 @@ main{
         background-color:#b3d8e8; 
     }
     ul{
+        @include ulAlign;
         li{width:100%; height:100%;}
         .wardrobe{
             @include absolute(top,0,left,0);
@@ -189,7 +202,7 @@ main{
     height: 100vh;
     position: relative;
     overflow: hidden;
-    position:sticky;
+    // position:sticky;
     top:0;
     .green{
         background-color: #619191;
@@ -201,6 +214,7 @@ main{
         background-color:#d1d5d1; 
     }
     ul{
+        @include ulAlign;
         li{width:100%; height:100%;}
         .counters{
             @include absolute(top,0,left,0);

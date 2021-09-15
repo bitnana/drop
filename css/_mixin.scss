@@ -67,3 +67,8 @@ a {text-decoration: none; color: black;}
         opacity: 1;
     }
 }
+
+@mixin ulAlign{
+    margin:0 auto;
+    width:1280px;
+}
