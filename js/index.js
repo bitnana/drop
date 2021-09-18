@@ -100,6 +100,17 @@ window.addEventListener('DOMContentLoaded',function(){
         });
         
 
+    //////★★★★★★★★★★★빛나 배경색바꾸기
+    let a,b,c,y;
+    const skyBg = document.querySelector('.sky');
+    window.addEventListener('scroll', function(){
+        y = this.scrollY;
+        a = 74 + 66/640*y;
+        b = 74 + 127/640*y;
+        c = 74 + 146/640*y;
+        skyBg.style.background = `rgb(${a},${b},${c})`;
+
+    });
 
     // gsap.to(".c",{
     //     scrollTrigger:{
