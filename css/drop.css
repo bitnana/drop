@@ -48,37 +48,47 @@ a {
 
 @-webkit-keyframes big {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: translateX(-550px) scale(1);
+            transform: translateX(-550px) scale(1);
     opacity: 1;
   }
   50% {
-    -webkit-transform: scale(4);
-            transform: scale(4);
+    -webkit-transform: translateX(-550px) scale(4);
+            transform: translateX(-550px) scale(4);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: translateX(-550px) scale(10);
+            transform: translateX(-550px) scale(10);
     opacity: 1;
   }
   100% {
-    -webkit-transform: scale(10);
-            transform: scale(10);
-    opacity: 1;
+    -webkit-transform: translateX(-550px) scale(10);
+            transform: translateX(-550px) scale(10);
+    opacity: 0;
   }
 }
 
 @keyframes big {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: translateX(-550px) scale(1);
+            transform: translateX(-550px) scale(1);
     opacity: 1;
   }
   50% {
-    -webkit-transform: scale(4);
-            transform: scale(4);
+    -webkit-transform: translateX(-550px) scale(4);
+            transform: translateX(-550px) scale(4);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: translateX(-550px) scale(10);
+            transform: translateX(-550px) scale(10);
     opacity: 1;
   }
   100% {
-    -webkit-transform: scale(10);
-            transform: scale(10);
-    opacity: 1;
+    -webkit-transform: translateX(-550px) scale(10);
+            transform: translateX(-550px) scale(10);
+    opacity: 0;
   }
 }
 
@@ -137,6 +147,28 @@ a {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes click {
+  0% {
+    -webkit-transform: translate(57px, 35px);
+            transform: translate(57px, 35px);
+  }
+  100% {
+    -webkit-transform: translate(57px, 49px);
+            transform: translate(57px, 49px);
+  }
+}
+
+@keyframes click {
+  0% {
+    -webkit-transform: translate(57px, 35px);
+            transform: translate(57px, 35px);
+  }
+  100% {
+    -webkit-transform: translate(57px, 49px);
+            transform: translate(57px, 49px);
   }
 }
 

@@ -14,45 +14,7 @@ https://flashvhtml.com/
 
 --------------------------------------------------------------------------------------------------------------------
 
-<mixin>
 
-@keyframes menuList {
-    0%{
-        transform: translate(0, 20px);
-        opacity: 0;
-    }
 
-    100%{
-        transform: translate(0, 0);
-        opacity: 1;
-    }
-}
-
-<common>
- .menubox{
-    position: absolute; top: 13%; right: 4%;
-    width: 383px;
-    height: 361px; 
-    border-radius: 200px;
-    background: white;
-    opacity: 1;
-    ul{
-        li{
-            @include absolute(top,20vh,left,25%);
-            opacity: 0;
-            a{
-                font-size: 0.6rem;
-            }
-        }
-        @for $i from 1 to 7 {
-            li:nth-of-type(#{$i}).active{
-                top: calc(20vh + (#{$i} - 1)*1.5vh );
-                animation: menuList 0.5s forwards linear;
-                animation-delay: calc(#{$i}*0.5s);
-            }
-
-        }  //for end
-        
-
-    }
-}
+**메뉴누르면 스크롤사라지는 부분
+** 해상도에 따른 위치조정
